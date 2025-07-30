@@ -64,6 +64,20 @@ app.post("/riddles", async (req, res) => {
 });
 
 
+// server.js
+
+// POST /riddles
+// server.js
+
+// POST /fruits
+app.post("/riddles", async (req, res) => {
+  req.body 
+  await Instrument.create(req.body);
+  res.redirect("/riddles/new");
+});
+
+
+
 
 
 
