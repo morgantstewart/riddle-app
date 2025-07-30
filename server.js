@@ -25,6 +25,7 @@ mongoose.connection.on('connected', () => {
 });
 
 const Riddle = require("./models/riddle.js");
+app.use(express.urlencoded({ extended: false }));
 
 
 app.use(express.urlencoded({ extended: false }));
@@ -48,12 +49,20 @@ app.get('/', (req, res) => {
   });
 });
 
-// server.js
 
 // GET /riddles/new
 app.get("/riddles/new", (req, res) => {
-  res.send("This route sends the user a form page!");
+  res.render("riddles/new.ejs");
 });
+
+
+
+// POST /riddles
+app.post("/riddles", async (req, res) => {
+  console.log(req.body);
+  res.redirect("/riddles/new");
+});
+
 
 
 

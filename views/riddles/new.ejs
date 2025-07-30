@@ -1,4 +1,3 @@
-<!-- views/fruits/new.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,5 +8,14 @@
   </head>
   <body>
     <h1>Add a New Riddle!</h1>
+  <form action="/riddles" method="POST">
+    <label for="riddle">Riddle:</label>
+     <textarea name="riddle" id="riddle"></textarea>
+<br><br>
+    <label for="answer">Answer:</label>
+      <textarea name="answer" id="answer"></textarea>
+<br><br>
+    <button type="submit">Add Riddle</button>
+  </form>
   </body>
 </html>
