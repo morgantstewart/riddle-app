@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>Homepage</title>
 </head>
 <body>
   <% if (user) { %>
-    <h1>Welcome to the app, <%= user.username %>!</h1>
-    <p>
+   <center><h1>Welcome to the Riddles app, <%= user.username %>!</h1>
+    <p><img src="https://www.mediafire.com/file/hktfz4fzfdcypd4/riddleblob.png/file"></img>
+      <br><br>
       <a href="/auth/sign-out">Sign out</a>
-    </p>
+    </p></center>
   <% } else { %>
-    <h1>Welcome to the app, guest.</h1>
-    <p>
+    <center><h1>Welcome to the Riddles app, guest.</h1>
+    <p><img src="https://www.mediafire.com/file/hktfz4fzfdcypd4/riddleblob.png/file"></img>
+        <br><br>
       <a href="/auth/sign-up">Sign up</a> or
       <a href="/auth/sign-in">Sign in</a>.
-    </p>
-  <% } %>
-  <p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a></p>
+    </p></center>
+     <% } %>
 </body>
 </html>
