@@ -8,8 +8,15 @@ const morgan = require('morgan');
 const session = require('express-session');
 
 const authController = require('./controllers/auth.js');
+const riddlesController = require('./controllers/riddles.js');
+
 
 const port = process.env.PORT ? process.env.PORT : '3000';
+
+
+const isSignedIn = require('./middleware/is-signed-in.js');
+
+
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -19,7 +26,14 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-// app.use(morgan('dev'));
+
+
+
+app.use('/auth', authController);
+app.use('/riddles', isSignedIn, riddlesController);
+
+
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -35,7 +49,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/auth', authController);
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
