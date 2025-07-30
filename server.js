@@ -29,11 +29,8 @@ app.use(methodOverride('_method'));
 
 
 
-app.use('/auth', authController);
-app.use('/riddles', isSignedIn, riddlesController);
 
-
-
+// app.use(morgan('dev'));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
