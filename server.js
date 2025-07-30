@@ -24,6 +24,9 @@ mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+const Riddle = require("./models/riddle.js");
+
+
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
@@ -43,6 +46,13 @@ app.get('/', (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
   });
+});
+
+// server.js
+
+// GET /riddles/new
+app.get("/riddles/new", (req, res) => {
+  res.send("This route sends the user a form page!");
 });
 
 
