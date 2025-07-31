@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
-const methodOverride = require('method-override');
-const morgan = require('morgan');
 const express = require('express');
 const router = express.Router();
-const app = express();
 
 const User = require("../models/user.js")
  const Riddle = require("../models/riddle.js")
@@ -91,6 +88,29 @@ router.get('/:riddleId/edit', async (req, res) => {
     res.redirect('/');
   }
 });
+
+
+
+
+
+
+
+//
+
+
+router.get('/:riddleId/riddles', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const riddle = currentUser.riddles.id(req.params.riddleId);
+    res.render('riddles/index.ejs', {
+      riddle: riddle,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
 
 
 //
