@@ -79,8 +79,6 @@ router.get('/:riddleId', async (req, res) => {
 
 
 
-
-
 router.get('/:riddleId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -114,10 +112,7 @@ router.put('/:riddleId', async (req, res) => {
   }
 });
 
-
 //
-
-
 
 module.exports = router;
 
