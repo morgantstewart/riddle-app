@@ -33,7 +33,6 @@ app.use(methodOverride('_method'));
 
 
 
-
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -42,37 +41,13 @@ app.use(
   })
 );
 
+
 app.get('/', (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
   });
 });
-
-
-app.get('./riddles/new', (req, res) => {
-  res.render('new.ejs', {
-    user: req.session.user,
-  });
-});
-
-
-app.get('./riddles', (req, res) => {
-  res.render('riddles/index.ejs', {
-    user: req.session.user,
-  });
-});
-
-
-
-
-// server.js
-
-// POST /fruits
-app.post("/riddles", async (req, res) => {
-  console.log(req.body);
-  res.redirect("/riddles/index.ejs");
-});
-
+//that one can stay.^^
 
 
 
@@ -82,7 +57,9 @@ app.post("/riddles", async (req, res) => {
 app.use('/auth', authController)
 const isSignedIn = require('./middleware/is-signed-in.js');
 app.use('/riddles', riddlesController)
-
+//pointing to riddles controller
+//need to adjust routes so they are not sent to server.js
+//mount like we're doing on line 100
 
 
 app.listen(port, () => {
