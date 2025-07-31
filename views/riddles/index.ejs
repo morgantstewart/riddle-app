@@ -13,12 +13,11 @@
   <% riddles.forEach((riddle)=>{ %>
   <li>
     <a href="/users/<%= user._id %>/riddles/<%= riddle._id %>">
-      <%= riddle.title %> at <%= application.company %>
+      <%= riddle.riddle %> /// <%= riddle.answer %>
   </a></li>
   <% }) %>
 </ul>
 
-    //render riddles here
 </body>
 </html>
 

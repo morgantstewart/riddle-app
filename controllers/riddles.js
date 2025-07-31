@@ -16,8 +16,8 @@ router.get('/', async (req, res) => {
     } catch (error) {
         console.log(error);
         res.redirect('/');
-    }
-});
+}});
+
 
 
 
@@ -27,22 +27,24 @@ router.get('/new', async (req, res) => {
 });
 
 
+
+
 //POST for '/riddles
 router.post('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
 
         currentUser.riddles.push(req.body);
-
+ req.body.owner = req.session.user._id;
         await currentUser.save();
+  await Riddle.create(req.body);
 
         res.redirect(`/users/${currentUser.id}/riddles`);
     } catch (error) {
         console.log(error);
-        res.redirect('/');
+        res.redirect('/riddles/index');
     }
 });
-
 
 
 
@@ -66,6 +68,10 @@ router.get('/:riddleId', async (req, res) => {
         res.redirect('/');
     }
 });
+
+
+
+
 
 
 

@@ -1,9 +1,8 @@
-//write riddle schema here
-//go back to openhouse
-
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+
+
+const RiddlesSchema = mongoose.Schema({
   riddle: {
     type: String,
     required: true,
@@ -11,6 +10,10 @@ const userSchema = mongoose.Schema({
   solution: {
     type: String,
     required: true,
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
   },
 });
 
