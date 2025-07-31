@@ -11,8 +11,12 @@ const User = require("../models/user.js")
 //Router logic
 //renders index: replace this because it's embedded!
 
-// controllers/listings.js
 
+
+
+
+
+// controllers/listings.js
 router.get('/', async (req, res) => {
   try {
     const populatedRiddles = await Riddle.find({}).populate('owner');
