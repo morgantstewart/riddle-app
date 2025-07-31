@@ -45,6 +45,10 @@ router.post('/', async (req, res) => {
 
 
 
+
+
+
+
 // GET to /applications/:applicationId
 
 router.get('/:riddleId', async (req, res) => {

@@ -49,6 +49,32 @@ app.get('/', (req, res) => {
 });
 
 
+app.get('./riddles/new', (req, res) => {
+  res.render('new.ejs', {
+    user: req.session.user,
+  });
+});
+
+
+app.get('./riddles', (req, res) => {
+  res.render('riddles/index.ejs', {
+    user: req.session.user,
+  });
+});
+
+
+
+
+// server.js
+
+// POST /fruits
+app.post("/riddles", async (req, res) => {
+  console.log(req.body);
+  res.redirect("/riddles/index.ejs");
+});
+
+
+
 
 
 
