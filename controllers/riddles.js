@@ -1,22 +1,34 @@
-
+const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+const morgan = require('morgan');
 const express = require('express');
 const router = express.Router();
+const app = express();
 
-const User = require('../models/user.js');
+
 
 
 //Router logic
+
+
 router.get('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
-
         res.render('riddles/index.ejs', {
             riddles: currentUser.riddles
         });
     } catch (error) {
         console.log(error);
         res.redirect('/');
-}});
+    }
+});
+
+
+
+
+module.exports = router;
+
+
 
 
 
@@ -25,6 +37,25 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
     res.render('riddles/new.ejs');
 });
+
+
+
+
+
+app.get('/some-path', async (req, res) => {
+  const riddles = await Riddle.find();
+  res.render('/riddles',  {
+    riddles,         
+    user: req.user   
+  });
+});
+
+
+
+
+
+
+
 
 
 
@@ -75,8 +106,6 @@ router.get('/:riddleId', async (req, res) => {
 
 
 
-// controllers/riddles.js
-
 router.get('/:riddleId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -112,5 +141,6 @@ router.put('/:riddleId', async (req, res) => {
 
 
 
-
 module.exports = router;
+
+
