@@ -10,11 +10,11 @@ const session = require('express-session');
 const authController = require('./controllers/auth.js');
 const riddlesController = require('./controllers/riddles.js');
 
+//need to mount app.use 
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 
-const isSignedIn = require('./middleware/is-signed-in.js');
 
 
 
@@ -34,7 +34,6 @@ app.use(methodOverride('_method'));
 
 
 
-// app.use(morgan('dev'));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -49,35 +48,9 @@ app.get('/', (req, res) => {
   });
 });
 
-
-// GET /riddles/new
-app.get("/riddles/new", (req, res) => {
-  res.render("riddles/new.ejs");
-});
-
-
-
-// POST /riddles
-app.post("/riddles", async (req, res) => {
-  console.log(req.body);
-  res.redirect("/riddles/new");
-});
-
-
-// server.js
-
-// POST /riddles
-// server.js
-
-// POST /fruits
-app.post("/riddles", async (req, res) => {
-  req.body 
-  await Instrument.create(req.body);
-  res.redirect("/riddles/new");
-});
-
-
-
+app.use('/auth', authController)
+const isSignedIn = require('./middleware/is-signed-in.js');
+app.use('/riddles', riddlesController)
 
 
 

@@ -1,0 +1,12 @@
+<nav><center>
+  <% if(user) { %>
+  <a href="/users/<%= user._id %>/riddles">Your Riddles</a>
+  <a href="/riddles">Riddles Index</a>
+  <a href="/riddles/new">New Riddle</a>
+  <a href="/auth/sign-out">Sign Out</a>
+  <% } else { %>
+  <a href="/auth/sign-in">Sign In</a>
+  <a href="/auth/sign-up">Sign Up</a>
+  <% } %>
+  </center>
+</nav>

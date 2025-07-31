@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
 </head>
+
 <body>
-  <% if (user) { %>
-   <center><h1>Welcome to the Riddles app, <%= user.username %>!</h1>
-    <p><img src="https://www.mediafire.com/file/hktfz4fzfdcypd4/riddleblob.png/file"></img>
-      <br><br>
-      <a href="/auth/sign-out">Sign out</a>
-    </p></center>
+  <center>
+    <%- include('./partials/_navbar.ejs')-%>
+      <% if (user) { %>
+        <br>
+        <h1>Welcome to the Riddles app, <%= user.username %>!</h1>
+        <p><img src="https://www.mediafire.com/file/hktfz4fzfdcypd4/riddleblob.png/file"></img>
+          <br><br>
+          <a href="/riddles">View Riddles Index</a>
+        </p>
+  </center>
   <% } else { %>
-    <center><h1>Welcome to the Riddles app, guest.</h1>
-    <p><img src="https://www.mediafire.com/file/hktfz4fzfdcypd4/riddleblob.png/file"></img>
+    <center>
+      <h1>Welcome to the Riddles app, guest.</h1>
+      <p><img src="https://www.mediafire.com/file/hktfz4fzfdcypd4/riddleblob.png/file"></img>
         <br><br>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p></center>
-     <% } %>
+        <a href="/auth/sign-up">Sign up</a> or
+        <a href="/auth/sign-in">Sign in</a> to see the Riddles Index.
+      </p>
+    </center>
+    <% } %>
+      </center>
 </body>
+
 </html>
