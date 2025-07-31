@@ -12,11 +12,5 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  owner: {
-    type: objectId,
-  },
 });
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
