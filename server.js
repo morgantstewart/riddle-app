@@ -48,6 +48,11 @@ app.get('/', (req, res) => {
   });
 });
 
+
+
+
+
+
 app.use('/auth', authController)
 const isSignedIn = require('./middleware/is-signed-in.js');
 app.use('/riddles', riddlesController)

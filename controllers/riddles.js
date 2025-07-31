@@ -27,7 +27,7 @@ router.get('/new', async (req, res) => {
 });
 
 
-//POST for '/applications
+//POST for '/riddles
 router.post('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
@@ -65,7 +65,7 @@ router.get('/:riddleId', async (req, res) => {
 
 
 
-// controllers/applications.js
+// controllers/riddles.js
 
 router.get('/:riddleId/edit', async (req, res) => {
   try {
