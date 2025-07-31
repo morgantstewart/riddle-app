@@ -5,29 +5,24 @@ const express = require('express');
 const router = express.Router();
 const app = express();
 
-
-
+const User = require("../models/user.js")
+ const Riddle = require("../models/riddle.js")
 
 //Router logic
+//renders index: replace this because it's embedded!
 
+// controllers/listings.js
 
 router.get('/', async (req, res) => {
-    try {
-        const currentUser = await User.findById(req.session.user._id);
-        res.render('riddles/index.ejs', {
-            riddles: currentUser.riddles
-        });
-    } catch (error) {
-        console.log(error);
-        res.redirect('/');
-    }
+  try {
+    const populatedRiddles = await Riddle.find({}).populate('owner');
+    console.log('Populated Riddles:', populatedRiddles);
+    res.render('riddles/index.ejs', {riddles: populatedRiddles});
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
 });
-
-
-
-
-module.exports = router;
-
 
 
 
@@ -37,26 +32,6 @@ module.exports = router;
 router.get('/new', async (req, res) => {
     res.render('riddles/new.ejs');
 });
-
-
-
-
-
-// app.get('/some-path', async (req, res) => {
-//   const riddles = await Riddle.find();
-//   res.render('/riddles',  {
-//     riddles,         
-//     user: req.user   
-//   });
-// });
-
-
-
-
-
-
-
-
 
 
 
@@ -120,7 +95,7 @@ router.get('/:riddleId/edit', async (req, res) => {
 });
 
 
-
+//
 
 router.put('/:riddleId', async (req, res) => {
   try {
@@ -138,6 +113,9 @@ router.put('/:riddleId', async (req, res) => {
     res.redirect('/');
   }
 });
+
+
+//
 
 
 
