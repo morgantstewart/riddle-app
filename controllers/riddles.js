@@ -42,13 +42,13 @@ router.get('/new', async (req, res) => {
 
 
 
-app.get('/some-path', async (req, res) => {
-  const riddles = await Riddle.find();
-  res.render('/riddles',  {
-    riddles,         
-    user: req.user   
-  });
-});
+// app.get('/some-path', async (req, res) => {
+//   const riddles = await Riddle.find();
+//   res.render('/riddles',  {
+//     riddles,         
+//     user: req.user   
+//   });
+// });
 
 
 
