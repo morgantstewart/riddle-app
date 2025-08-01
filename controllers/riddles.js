@@ -8,27 +8,10 @@ const User = require("../models/user.js")
 //import the Riddle model:
 const Riddle = require("../models/riddle.js")
 
-//GET request to /riddles
-router.get('/riddles', async (req, res) => {
-  try {
-    const populatedRiddles = await Riddle.find({}).populate('owner');
-    console.log('Populated Riddles:', populatedRiddles);
-    res.render('riddles/index.ejs', { riddles: populatedRiddles });
-  } catch (error) {
-    console.log(error);
-    res.redirect('/');
-  }
-});
-
-
-
-
-
-
 
 //Router logic
 
-// controllers/riddles.js
+// GET request to controllers/riddles.js
 router.get('/', async (req, res) => {
   try {
     const populatedRiddles = await Riddle.find({}).populate('owner');
@@ -39,7 +22,6 @@ router.get('/', async (req, res) => {
     res.redirect('/');
   }
 });
-
 
 
 
