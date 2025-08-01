@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     const populatedRiddles = await Riddle.find({}).populate('owner');
     console.log('Populated Riddles:', populatedRiddles);
     res.render('riddles/index.ejs', {
-          riddles: populatedRiddles,
+      riddles: populatedRiddles,
     });
   } catch (error) {
     console.log(error);
@@ -32,6 +32,24 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
   res.render('riddles/new.ejs');
 });
+
+//GET SHOW PAGE
+// controllers/listings.js
+
+router.get('/:riddleId', async (req, res) => {
+  try {
+    console.log('riddleId: ', req.params.riddleId);
+    res.send(`Riddles show page`);
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
+
+
+
 
 
 
