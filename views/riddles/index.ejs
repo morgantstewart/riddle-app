@@ -8,6 +8,16 @@
 <body>
     <h2>Riddles Index</h2>
 
+
+
+    <ul>
+  <% riddles.forEach((riddle) => { %>
+  <li>
+    Riddle: <%= riddle.riddle %> owned by <%= riddle.owner.username %>.
+  </li>
+  <% }) %>
+</ul>
+
 </body>
 </html>
 

@@ -10,14 +10,16 @@ const Riddle = require("../models/riddle.js")
 
 
 //Router logic
-
+//create and read CRUD routes are completed.
 // GET request to controllers/riddles.js
 
 router.get('/', async (req, res) => {
   try {
     const populatedRiddles = await Riddle.find({}).populate('owner');
     console.log('Populated Riddles:', populatedRiddles);
-    res.render('riddles/index.ejs')
+    res.render('riddles/index.ejs', {
+          riddles: populatedRiddles,
+    });
   } catch (error) {
     console.log(error);
     res.redirect('/');
