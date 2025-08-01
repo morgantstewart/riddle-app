@@ -27,12 +27,6 @@ app.use(
   })
 );
 
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
-    user: req.session.user,
-  });
-});
-
 //
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -50,27 +44,17 @@ app.use(methodOverride('_method'));
 
 
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+
+
+
 
 //GET /
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
   });
 });
 //that one can stay.^^
-
-
-
-
-
-
 
 
 
@@ -83,3 +67,6 @@ app.use('/riddles', riddlesController)
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
+
+
+
