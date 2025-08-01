@@ -38,13 +38,16 @@ app.use(
   })
 );
 
-
+//GET /
 app.get('/', (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
   });
 });
 //that one can stay.^^
+
+
+
 
 
 
