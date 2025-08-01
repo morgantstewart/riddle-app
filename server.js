@@ -5,15 +5,35 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const session = require('express-session');
-const authController = require('./controllers/auth.js');
-const riddlesController = require('./controllers/riddles.js');
 
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
+//added as per middleware instructions on OpenHouse:
+const isSignedIn = require('./middleware/is-signed-in.js');
+const authController = require('./controllers/auth.js');
+const riddlesController = require('./controllers/riddles.js');
 
 
+const passUserToView = require('./middleware/pass-user-to-view.js');
 
+module.exports = passUserToView;
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+app.get('/', (req, res) => {
+  res.render('index.ejs', {
+    user: req.session.user,
+  });
+});
+
+//
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -55,11 +75,9 @@ app.get('/', (req, res) => {
 
 
 app.use('/auth', authController)
-const isSignedIn = require('./middleware/is-signed-in.js');
 app.use('/riddles', riddlesController)
 //pointing to riddles controller
 //need to adjust routes so they are not sent to server.js
-//mount like we're doing on line 100
 
 
 app.listen(port, () => {

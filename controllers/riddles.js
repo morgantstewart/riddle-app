@@ -1,22 +1,34 @@
-const mongoose = require('mongoose');
-const methodOverride = require('method-override');
-const morgan = require('morgan');
+
 const express = require('express');
 const router = express.Router();
 const app = express();
 
 const User = require("../models/user.js")
+
+//import the Riddle model:
 const Riddle = require("../models/riddle.js")
 
+//GET request to /riddles
+router.get('/riddles', async (req, res) => {
+  try {
+    const populatedRiddles = await Riddle.find({}).populate('owner');
+    console.log('Populated Riddles:', populatedRiddles);
+    res.render('riddles/index.ejs', { riddles: populatedRiddles });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
+
+
+
+
+
 //Router logic
-//renders index: replace this because it's embedded!
 
-
-
-
-
-
-// controllers/listings.js
+// controllers/riddles.js
 router.get('/', async (req, res) => {
   try {
     const populatedRiddles = await Riddle.find({}).populate('owner');
@@ -39,29 +51,25 @@ router.get('/new', async (req, res) => {
 
 
 
+//attempted new POST /riddles
 
-
-
-
-
-
-
-//POST for '/riddles
-router.post('/', async (req, res) => {
+app.post('/riddles', async (req, res) => {
   try {
-    const currentUser = await User.findById(req.session.user._id);
-
-    currentUser.riddles.push(req.body);
-    req.body.owner = req.session.user._id;
-    await currentUser.save();
     await Riddle.create(req.body);
-
-    res.redirect(`/users/${currentUser.id}/riddles`);
+    res.redirect('/riddles');
   } catch (error) {
-    console.log(error);
-    res.redirect('/riddles/index');
+    console.error(error);
+    res.status(500).send('Error creating riddle');
   }
+
+
+
+
 });
+
+
+//
+
 
 
 
@@ -69,14 +77,14 @@ router.post('/', async (req, res) => {
 
 
 // GET to /applications/:applicationId
-
+//changed riddles/show to riddles/index.ejs
 router.get('/:riddleId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
 
     const riddle = currentUser.riddles.id(req.params.riddleId)
 
-    res.render('riddles/show.ejs', {
+    res.render('riddles/index.ejs', {
       riddle: riddle,
     })
 
@@ -126,7 +134,9 @@ router.put('/:riddleId', async (req, res) => {
 });
 
 
-//
+
+
+
 
 
 

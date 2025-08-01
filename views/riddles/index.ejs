@@ -9,7 +9,7 @@
     <h2>Riddles Index</h2>
 
 <ul>
-  <% riddles.forEach((riddle)=>{ %>
+  <% riddles.forEach(riddle =>{ %>
   <li>
     <a href="/users/<%= user._id %>/riddles/<%= riddle._id %>">
       <%= riddle.riddle %> /// <%= riddle.answer %>
