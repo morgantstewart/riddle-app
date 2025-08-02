@@ -44,8 +44,8 @@ router.get('/', async (req, res) => {
 router.get('/:riddleId', async (req, res) => {
   try {
     console.log('riddleId: ', req.params.riddleId);
-    const riddle = Riddle.findById(req.params.riddleId)
-    const owner = User.findById(riddle.owner)
+    const riddle = await Riddle.findById(req.params.riddleId)
+    const owner = await User.findById(riddle.owner)
     res.render('riddles/show.ejs', {riddle: riddle, owner: owner});
   } catch (error) {
     console.log(error); 

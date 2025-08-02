@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 
 
+
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 //added as per middleware instructions on OpenHouse:
@@ -57,8 +58,9 @@ app.get('/', async (req, res) => {
 //that one can stay.^^
 
 
-
+app.use(passUserToView)
 app.use('/auth', authController)
+app.use(isSignedIn)
 app.use('/riddles', riddlesController)
 //pointing to riddles controller
 //need to adjust routes so they are not sent to server.js
