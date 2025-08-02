@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 
 
-
 const riddlesSchema = mongoose.Schema({
   riddle: {
     type: String,

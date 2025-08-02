@@ -42,12 +42,23 @@ router.get('/:riddleId', async (req, res) => {
     res.send(`Riddles show page`);
   } catch (error) {
     console.log(error);
-    res.redirect('/');
+    res.redirect('riddles/show.ejs');
   }
 });
 
 
+//added fom Openhouse Database Insertion
+router.post('/', async (req, res) => {
+  req.body.owner = req.session.user._id;
+  await Riddle.create(req.body);
+  res.redirect('/riddles');
+});
 
+
+//newest, create a POST route for /listings
+router.post('/:riddleId/', async (req, res) => {
+  res.redirect('/riddles');
+});
 
 
 
@@ -98,12 +109,6 @@ router.get('/:riddleId', async (req, res) => {
 //   }
 // });
 
-//newly added fom Openhouse Database Insertion
-router.post('/', async (req, res) => {
-  req.body.owner = req.session.user._id;
-  await Riddle.create(req.body);
-  res.redirect('/riddles');
-});
 
 
 //newest added
