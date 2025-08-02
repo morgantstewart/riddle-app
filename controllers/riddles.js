@@ -11,6 +11,16 @@ const Riddle = require("../models/riddle.js")
 
 //Router logic
 //create and read CRUD routes are completed.
+
+
+//GET for riddles/new
+router.get('/new', async (req, res) => {
+  res.render('riddles/new.ejs');
+});
+
+
+
+
 // GET request to controllers/riddles.js
 
 router.get('/', async (req, res) => {
@@ -28,21 +38,18 @@ router.get('/', async (req, res) => {
 
 //
 
-//GET for riddles/new
-router.get('/new', async (req, res) => {
-  res.render('riddles/new.ejs');
-});
-
 //GET SHOW PAGE
 // controllers/listings.js
 
 router.get('/:riddleId', async (req, res) => {
   try {
     console.log('riddleId: ', req.params.riddleId);
-    res.send(`Riddles show page`);
+    const riddle = Riddle.findById(req.params.riddleId)
+    const owner = User.findById(riddle.owner)
+    res.render('riddles/show.ejs', {riddle: riddle, owner: owner});
   } catch (error) {
-    console.log(error);
-    res.redirect('riddles/show.ejs');
+    console.log(error); 
+    res.send(error)
   }
 });
 

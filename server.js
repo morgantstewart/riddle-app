@@ -64,6 +64,28 @@ app.use('/riddles', riddlesController)
 //need to adjust routes so they are not sent to server.js
 
 
+//NEW
+// POST /riddles
+app.post("/riddles", async (req, res) => {
+  await Riddle.create(req.body);
+  res.redirect("/riddles"); // redirect to index fruits
+});
+
+
+
+
+
+
+
+app.get("/riddles/:riddleId", async (req, res) => {
+  const foundRiddle = await Riddle.findById(req.params.riddleId);
+  res.render("riddle/show.ejs", { riddle: foundRiddle });
+});
+
+
+
+
+
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
