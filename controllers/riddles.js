@@ -20,7 +20,6 @@ router.get('/new', async (req, res) => {
 
 
 
-
 // GET request to controllers/riddles.js
 
 router.get('/', async (req, res) => {
