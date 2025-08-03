@@ -69,6 +69,9 @@ app.get('/riddles/new', async (req, res) => {
 
 
 
+
+
+
 app.use(passUserToView)
 app.use('/auth', authController)
 app.use(isSignedIn)
