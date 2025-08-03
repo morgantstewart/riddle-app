@@ -16,14 +16,17 @@
 <body>
 
   <h2>Details</h2>
+
+  <br>
   <p>Q: <%= riddle.riddle %>
   </p>
   <p>A: <%= riddle.answer %>
   </p>
 
-  <br><Br>
-
+  <br><Br><br>
+ <div class="flex-container-details">
   <% if (owner._id.toString()===user._id.toString()) { %>
+    
     <p>You own this!</p>
 
     <a href="/riddles/<%= riddle._id %>/edit">Edit this riddle</a><br>
@@ -32,6 +35,7 @@
       <button type="submit">Delete this riddle</button>
     </form>
     <% } %>
+    
 </body>
 
 </html>
