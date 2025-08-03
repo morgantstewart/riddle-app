@@ -7,7 +7,23 @@ body {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: #f9f7f0;
+  background-color: #ffffff;
 }
 
 
+    /* public/style.css */
+    .flex-container {
+        display: flex; /* Makes the container a flex container */
+        /* Optional Flexbox properties for the container: */
+        flex-direction: row; /* Default: items arranged in a row */
+        justify-content: space-around; /* Distributes space around items */
+        align-items: center; /* Aligns items along the cross-axis */
+        height: 200px; /* Example height for visualization */
+        border: 1px solid black;
+    }
+
+    .flex-item {
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        margin: 10px;
+        flex-grow: 1; 
