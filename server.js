@@ -58,12 +58,36 @@ app.get('/', async (req, res) => {
 //that one can stay.^^
 
 
+// app.get('/riddles', async (req, res) => {
+//   const allRiddles = await Riddle.find({});
+//   res.send('Welcome to the riddles index page!');
+// ;})
+
+
+//GET / NEW
+app.get('/riddles/new', async (req, res) => {
+  res.render('riddles/new.ejs', {
+  });
+});
+
+
+
 app.use(passUserToView)
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/riddles', riddlesController)
 //pointing to riddles controller
 //need to adjust routes so they are not sent to server.js
+
+
+
+
+
+app.get("/riddles/:riddleId", async (req, res) => {
+  const foundRiddle = await Riddle.findById(req.params.riddleId);
+  res.render("riddle/show.ejs", { riddle: foundRiddle });
+});
+
 
 
 //NEW
@@ -76,12 +100,9 @@ app.post("/riddles", async (req, res) => {
 
 
 
-
-
-
-app.get("/riddles/:riddleId", async (req, res) => {
-  const foundRiddle = await Riddle.findById(req.params.riddleId);
-  res.render("riddle/show.ejs", { riddle: foundRiddle });
+app.delete("/fruits/:fruitId", async (req, res) => {
+  await Riddle.findByIdAndDelete(req.params.riddleId);
+  res.redirect("/riddles");
 });
 
 

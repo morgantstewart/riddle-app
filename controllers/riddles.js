@@ -71,25 +71,6 @@ router.post('/:riddleId/', async (req, res) => {
 
 
 
-// controllers/listings.js
-
-router.delete('/:riddleId', async (req, res) => {
-  try {
-    const riddle = await Riddle.findById(req.params.listingId);
-    // if (req.body.owner = req.session.user._id) {
-      if (riddle.owner.equals(req.session.user._id)) {
-      await riddle.deleteOne();
-      res.redirect('/riddles');
-    } else {
-      res.send("You don't have permission to do that, sorry.");
-    }
-  } catch (error) {
-    res.redirect('/');
-  }
-});
-
-
-
 
 // GET // EDIT Riddles
 
@@ -131,6 +112,62 @@ router.put('/:riddleId', async (req, res) => {
 
 
 
+
+//DELETE/ controllers/riddles.js
+
+// router.delete('/:riddleId', async (req, res) => {
+//   try {
+//     const riddle = await Riddle.findById(req.params.listingId);
+//       if (riddle.owner.equals(req.session.user._id)) {
+//       await riddle.deleteOne();
+//       res.redirect('/riddles');
+//     } else {
+//       res.send("You don't have permission to do that, sorry.");
+//     }
+//   } catch (error) {
+//     res.redirect('/');
+//   }
+// });
+
+// controllers/listings.js
+
+// router.delete('/:riddleId', async (req, res) => {
+//   try {
+//     const riddle = await Riddle.findById(req.params.riddleId);
+
+//      if (riddle.owner.equals(req.session.user._id)) {
+//       console.log('Permission granted');
+//     } else {
+//       console.log('Permission denied');
+//     }
+
+//     res.send(`A DELETE request was issued for ${req.params.riddleId}`);
+//   } catch (error) {
+//     console.log(error);
+//     res.redirect('/');
+//   }
+// });
+
+
+
+
+//TEST NEW CODE
+// controllers/riddles
+
+router.delete('/:riddleId', async (req, res) => {
+  try {
+    const riddle = await Riddle.findById(req.params.riddleId);
+    if (riddle.owner.equals(req.session.user._id)) {
+      await riddle.deleteOne();
+      res.redirect('/riddles');
+    } else {
+      res.send("You don't have permission to do that.");
+    }
+  } catch (error) {
+    console.error(error);
+    res.redirect('/');
+  }
+});
 
 
 // router.put('/:riddleId', async (req, res) => {
