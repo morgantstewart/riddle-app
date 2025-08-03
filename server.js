@@ -8,7 +8,18 @@ const session = require('express-session');
 
 
 
+
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
 const port = process.env.PORT ? process.env.PORT : '3000';
+
+
+
 
 //added as per middleware instructions on OpenHouse:
 const isSignedIn = require('./middleware/is-signed-in.js');

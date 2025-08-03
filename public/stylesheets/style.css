@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;700');
+
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f9f7f0;
+}
+
+
