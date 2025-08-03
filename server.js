@@ -72,6 +72,9 @@ app.get('/riddles/new', async (req, res) => {
 
 
 
+
+
+
 app.use(passUserToView)
 app.use('/auth', authController)
 app.use(isSignedIn)
@@ -95,6 +98,13 @@ app.get("/riddles/:riddleId", async (req, res) => {
 app.post("/riddles", async (req, res) => {
   await Riddle.create(req.body);
   res.redirect("/riddles"); // redirect to index fruits
+});
+
+
+// put -- RIDDLES EDIT
+app.put("/riddles/edit", async (req, res) => {
+  const foundRiddle = await Riddle.findById(req.params.riddleId);
+  res.render("riddle/edit.ejs", { riddle: foundRiddle });
 });
 
 

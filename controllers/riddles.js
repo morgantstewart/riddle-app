@@ -76,10 +76,7 @@ router.post('/:riddleId/', async (req, res) => {
 
 router.get('/:riddleId/edit', async (req, res) => {
   try {
-    console.log('riddleId: ', req.params.riddleId);
-    
     const currentRiddle = await Riddle.findById(req.params.riddleId);
-    
     res.render('riddles/edit.ejs', {
       riddle: currentRiddle,
     });
@@ -89,14 +86,29 @@ router.get('/:riddleId/edit', async (req, res) => {
   }
 });
 
-
-
-
 //PUT for EDIT RIDDLES
+
+// router.put('/:riddleId', async (req, res) => {
+//   try {
+//     const currentRiddle = await Listing.findById(req.params.riddleId);
+//     if (currentRiddle.owner.equals(req.session.user._id)) {
+//       await currentRiddle.updateOne(req.body);
+//       res.redirect('/riddles');
+//     } else {
+//       res.send("You don't have permission to do that.");
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     res.redirect('/');
+//   }
+// });
+
+//Just commented out:
+// PUT// controllers/listings.js
 
 router.put('/:riddleId', async (req, res) => {
   try {
-    const currentRiddle = await Listing.findById(req.params.riddleId);
+    const currentRiddle = await Riddle.findById(req.params.riddleId);
     if (currentRiddle.owner.equals(req.session.user._id)) {
       await currentRiddle.updateOne(req.body);
       res.redirect('/riddles');
@@ -108,6 +120,48 @@ router.put('/:riddleId', async (req, res) => {
     res.redirect('/');
   }
 });
+
+//TESTING---- controllers/listings.js
+
+// router.put('/:riddleId', async (req, res) => {
+//   try {
+//     const currentRiddle = await Riddle.findById(req.params.riddleId);
+
+//     if (currentRiddle.owner.equals(req.session.user._id)) {
+//       console.log('Permission granted');
+//     } else {
+//       console.log('Permission denied');
+//     }
+
+//     res.send(`A PUT request was issued for ${req.params.riddleId}`);
+//   } catch (error) {
+//     console.log(error);
+//     res.redirect('/');
+//   }
+// });
+
+
+
+
+
+
+// controllers/riddles
+
+router.delete('/:riddleId', async (req, res) => {
+  try {
+    const riddle = await Riddle.findById(req.params.riddleId);
+    if (riddle.owner.equals(req.session.user._id)) {
+      await riddle.deleteOne();
+      res.redirect('/riddles');
+    } else {
+      res.send("You don't have permission to do that.");
+    }
+  } catch (error) {
+    console.error(error);
+    res.redirect('/');
+  }
+});
+
 
 
 
@@ -129,45 +183,7 @@ router.put('/:riddleId', async (req, res) => {
 //   }
 // });
 
-// controllers/listings.js
 
-// router.delete('/:riddleId', async (req, res) => {
-//   try {
-//     const riddle = await Riddle.findById(req.params.riddleId);
-
-//      if (riddle.owner.equals(req.session.user._id)) {
-//       console.log('Permission granted');
-//     } else {
-//       console.log('Permission denied');
-//     }
-
-//     res.send(`A DELETE request was issued for ${req.params.riddleId}`);
-//   } catch (error) {
-//     console.log(error);
-//     res.redirect('/');
-//   }
-// });
-
-
-
-
-//TEST NEW CODE
-// controllers/riddles
-
-router.delete('/:riddleId', async (req, res) => {
-  try {
-    const riddle = await Riddle.findById(req.params.riddleId);
-    if (riddle.owner.equals(req.session.user._id)) {
-      await riddle.deleteOne();
-      res.redirect('/riddles');
-    } else {
-      res.send("You don't have permission to do that.");
-    }
-  } catch (error) {
-    console.error(error);
-    res.redirect('/');
-  }
-});
 
 
 // router.put('/:riddleId', async (req, res) => {
