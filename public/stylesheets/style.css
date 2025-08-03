@@ -1,5 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;700');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+</style>
 
+
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 body {
     font-family: 'Helvetica', sans-serif;
@@ -11,7 +25,6 @@ body {
 }
 
 
-/* public/style.css */
 .flex-container {
     display: flex;
     /* Makes the container a flex container */
@@ -105,4 +118,20 @@ body {
     padding: 20px;
     margin: 10px;
     flex-grow: 1;
+}
+
+.flex-container-addRiddle {
+    display: flex;
+    /* Makes the container a flex container */
+    /* Optional Flexbox properties for the container: */
+    flex-direction: row;
+    /* Default: items arranged in a row */
+    justify-content: space-around;
+    /* Distributes space around items */
+    align-items: center;
+    /* Aligns items along the cross-axis */
+    height: 300px;
+    /* Example height for visualization */
+    border: solid, black;
+    background-color: rgb(255, 255, 255);
 }
