@@ -10,12 +10,11 @@
   </head>
   <body>
     <center>
-    <%- include('../partials/_navbar.ejs') %>
     <br>
     <h1>Edit a Riddle</h1>
 <form action="/riddles/<%= riddle._id %>?_method=PUT" method="POST">
 
-        <label for="riddle">Riddle:</label>
+      <label for="riddle">Riddle:</label>
       <textarea name="riddle" id="riddle"></textarea>
      
       <br><br>

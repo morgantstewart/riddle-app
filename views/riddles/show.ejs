@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <%- include('./partials/_navbar.ejs')-%>
+
     <h2>Details</h2>
     <p>Q: <%= riddle.riddle %>
     </p>
@@ -26,8 +26,8 @@
     <% if (owner._id.toString()===user._id.toString()) { %>
       <p>You own this!</p>
 
-      <a href="/riddles/<%= riddle._id %>/edit">Edit this riddle</a> or
-      <br><Br>
+      <a href="/riddles/<%= riddle._id %>/edit">Edit this riddle</a><br>
+     
       <form action="/riddles/<%= riddle._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete this riddle</button>
       </form>
