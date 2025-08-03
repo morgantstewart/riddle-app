@@ -46,9 +46,9 @@ router.get('/:riddleId', async (req, res) => {
     console.log('riddleId: ', req.params.riddleId);
     const riddle = await Riddle.findById(req.params.riddleId)
     const owner = await User.findById(riddle.owner)
-    res.render('riddles/show.ejs', {riddle: riddle, owner: owner});
+    res.render('riddles/show.ejs', { riddle: riddle, owner: owner });
   } catch (error) {
-    console.log(error); 
+    console.log(error);
     res.send(error)
   }
 });
@@ -78,17 +78,34 @@ router.delete('/:riddleId', async (req, res) => {
     const riddle = await Riddle.findById(req.params.listingId);
     if (req.body.owner = req.session.user._id) {
       // await riddle.deleteOne();
-      
       res.redirect('/riddles');
     } else {
       res.send("You don't have permission to do that, sorry.");
     }
   } catch (error) {
-    console.error(error);
     res.redirect('/');
   }
 });
 
+
+
+
+// GET // EDIT
+
+router.get('/:riddleId/edit', async (req, res) => {
+  try {
+    console.log('riddleId: ', req.params.riddleId);
+    
+    const currentRiddle = await Riddle.findById(req.params.riddleId);
+    
+    res.render('riddles/edit.ejs', {
+      riddle: currentRiddle,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
 
 
 
