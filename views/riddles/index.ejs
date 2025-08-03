@@ -11,13 +11,13 @@
 <body>
   <center>
     <%- include('../partials/_navbar.ejs') %>
-      <h2>Riddles Index</h2>
+      <br><h2>Riddles Index</h2><br>
         <p> <div class="flex-container-riddle">
       <ul>
         <% riddles.forEach((riddle)=> { %>
           <!-- <li> -->
             Q: <%= riddle.riddle %>
-            <br><i> owned by <%= riddle.owner.username %>.
+            <br><i><>owned by <%= riddle.owner.username %>.
                 <a href="/riddles/<%= riddle._id %>">View</i></a>
           <!-- </li> -->
 <br><Br>

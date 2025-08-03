@@ -1,29 +1,27 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-</style>
+<style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-.space-mono-regular {
-  font-family: "Space Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
+</style>.space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .space-mono-bold {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .space-mono-regular-italic {
-  font-family: "Space Mono", monospace;
-  font-weight: 400;
-  font-style: italic;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .space-mono-bold-italic {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  font-style: italic;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
 }
 
 
@@ -47,7 +45,7 @@ body {
     /* Distributes space around items */
     align-items: center;
     /* Aligns items along the cross-axis */
-    height: 500px;
+    height: 600px;
     /* Example height for visualization */
     border: none;
     background-color: rgb(255, 255, 255);
@@ -71,7 +69,7 @@ body {
     /* Distributes space around items */
     align-items: center;
     /* Aligns items along the cross-axis */
-    height: 550px;
+    height: 650px;
     /* Example height for visualization */
     border: solid;
     background-color: rgb(255, 255, 255);
@@ -119,31 +117,31 @@ body {
     /* Distributes space around items */
     align-items: center;
     /* Aligns items along the cross-axis */
-    height: 50px;
+    height: 10px;
     /* Example height for visualization */
-    border:solid; 3pt; color(rgb(0, 0, 0)
+    border: solid, 6px, mediumaquamarine;
+    color: mediumaquamarine
+    }
 
-}
+    .flex-container-headerNav {
+        background-color: ;
+        padding: 40px;
+        margin: 40px;
+        flex-grow: 1;
+    }
 
-.flex-container-headerNav {
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    margin: 10px;
-    flex-grow: 1;
-}
-
-.flex-container-addRiddle {
-    display: flex;
-    /* Makes the container a flex container */
-    /* Optional Flexbox properties for the container: */
-    flex-direction: row;
-    /* Default: items arranged in a row */
-    justify-content: space-around;
-    /* Distributes space around items */
-    align-items: center;
-    /* Aligns items along the cross-axis */
-    height: 300px;
-    /* Example height for visualization */
-    border: solid, black;
-    background-color: rgb(255, 255, 255);
-}
+    .flex-container-addRiddle {
+        display: flex;
+        /* Makes the container a flex container */
+        /* Optional Flexbox properties for the container: */
+        flex-direction: row;
+        /* Default: items arranged in a row */
+        justify-content: space-around;
+        /* Distributes space around items */
+        align-items: center;
+        /* Aligns items along the cross-axis */
+        height: 300px;
+        /* Example height for visualization */
+        border: solid, black;
+        background-color: rgb(255, 255, 255);
+    }

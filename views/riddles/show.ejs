@@ -2,10 +2,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 
   <title>
     <%= owner.username %>'s riddle
@@ -13,25 +14,24 @@
 </head>
 
 <body>
-    <%- include('./partials/_navbar.ejs')-%>
+  <%- include('./partials/_navbar.ejs')-%>
     <h2>Details</h2>
     <p>Q: <%= riddle.riddle %>
     </p>
     <p>A: <%= riddle.answer %>
     </p>
 
-<br><Br>
+    <br><Br>
 
-    <% if (owner._id.toString() === user._id.toString()) { %>
-    <p>You own this!</p>
+    <% if (owner._id.toString()===user._id.toString()) { %>
+      <p>You own this!</p>
 
-    <a href="/riddles/<%= riddle._id %>/edit">Edit this riddle</a> or 
-<br><Br>
-    <form action="/riddles/<%= riddle._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete this riddle</button>
-    </form>
-    <% } %>
+      <a href="/riddles/<%= riddle._id %>/edit">Edit this riddle</a> or
+      <br><Br>
+      <form action="/riddles/<%= riddle._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete this riddle</button>
+      </form>
+      <% } %>
 </body>
+
 </html>
-
-
