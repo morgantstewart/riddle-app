@@ -17,14 +17,13 @@
       <% if (user) { %>
         <br>
         <h1>Riddle Me This </h1>
-        <br>
-        <p> <div class="flex-container">
-                         <h3><i>The Ultimate Riddle Index. </i></h3>
+        <p><div class="flex-container-intro1">
+        <h3><i>   The Ultimate Riddle Index.</i></h3></div>
           <a href="/riddles"><img src="https://www.mediafire.com/file/or0y0ryx41mr2z4/shapebigger.png/file"
               alt="Photo attributed to Canva App"></a><br>
 
-               <br>
-          <br><a href="/riddles">Enter here, <%= user.username %>.</a>
+     <p> <div class="flex-container-intro2">
+      <a href="/riddles">Enter here, <%= user.username %>...</a></div>
         </p>
   </center>
   <% } else { %>
