@@ -1,8 +1,8 @@
-<style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+<style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,00;0,700;1,400;1,700&display=swap');
 
 </style>.space-mono-regular {
     font-family: "Space Mono", monospace;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
 }
 
@@ -33,9 +33,27 @@ body {
     width: 100vw;
     background-color: #000000;
     color: #ffffff;
+    link-color
 }
 
 
+/* style.css */
+
+a:link {
+  color: white; 
+}
+
+a:visited {
+  color: rgb(241, 251, 226); /* Visited link */
+}
+
+a:hover {
+  color: rgb(202, 255, 133); /* Mouse over link */
+}
+
+a:active {
+  color:  rgb(241, 251, 226); /* Selected link */
+}
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -89,13 +107,13 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 1px;
-    border: solid, 3px, rgb(253, 253, 253);
+    border: solid, rgb(253, 253, 253);
     }
 
     .flex-container-headerNav {
         background-color: ;
-        padding: 40px;
-        margin: 40px;
+        padding: 20px;
+        margin: 20px;
         flex-grow: 1;
     }
 
