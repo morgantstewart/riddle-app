@@ -73,12 +73,11 @@ router.post('/:riddleId/', async (req, res) => {
 
 // controllers/listings.js
 
-
-
 router.delete('/:riddleId', async (req, res) => {
   try {
     const riddle = await Riddle.findById(req.params.listingId);
-    if (req.body.owner = req.session.user._id) {
+    // if (req.body.owner = req.session.user._id) {
+      if (riddle.owner.equals(req.session.user._id)) {
       await riddle.deleteOne();
       res.redirect('/riddles');
     } else {
