@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-      <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="./css/style.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+
 
   <title>Homepage</title>
 </head>
@@ -18,15 +18,12 @@
       <% if (user) { %>
         <br>
         <h1>Riddle Me This </h1>
-        <h3><i>...the ultimate Riddle Index. </i></h3>
-               
+
         <p>
-      <a href="/riddles"><img src="https://www.mediafire.com/file/or0y0ryx41mr2z4/shapebigger.png/file" alt="Photo attributed to Canva App"></a>
-        <br><a href="/riddles">See all riddles here, <%= user.username %>...</a>
-
-      
-          <br><br>
-
+          <a href="/riddles"><img src="https://www.mediafire.com/file/or0y0ryx41mr2z4/shapebigger.png/file"
+              alt="Photo attributed to Canva App"></a><br>
+               <h3><i>...the ultimate Riddle Index. </i></h3>
+          <br><a href="/riddles">Enter here, <%= user.username %>...</a>
         </p>
   </center>
   <% } else { %>
@@ -36,10 +33,10 @@
 
 
 
-        
-        <br><br>
-        <a href="/auth/sign-up">Sign up</a> or
-        <a href="/auth/sign-in">Sign in</a> to see the Riddles Index.
+
+      <br><br>
+      <a href="/auth/sign-up">Sign up</a> or
+      <a href="/auth/sign-in">Sign in</a> to see the Riddles Index.
       </p>
     </center>
     <% } %>

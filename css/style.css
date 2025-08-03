@@ -3,10 +3,10 @@
 }
 
 body {
-    background-image: url("https://www.mediafire.com/file/hedhfrs94abjrjw/neurondark.png/file");
+    background-image: url();
     margin: 0;
     min-width: auto;
-    color: beige;
+    color: rgb(21, 236, 111);
     stroke: #000000;
     stroke-width: 5px;
 

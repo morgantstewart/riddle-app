@@ -45,23 +45,13 @@ app.use(methodOverride('_method'));
 
 
 
-
-
-
-
 //GET /
 app.get('/', async (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
   });
 });
-//that one can stay.^^
 
-
-// app.get('/riddles', async (req, res) => {
-//   const allRiddles = await Riddle.find({});
-//   res.send('Welcome to the riddles index page!');
-// ;})
 
 
 //GET / NEW
@@ -72,16 +62,10 @@ app.get('/riddles/new', async (req, res) => {
 
 
 
-
-
-
 app.use(passUserToView)
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/riddles', riddlesController)
-//pointing to riddles controller
-//need to adjust routes so they are not sent to server.js
-
 
 
 
@@ -106,7 +90,6 @@ app.put("/riddles/edit", async (req, res) => {
   const foundRiddle = await Riddle.findById(req.params.riddleId);
   res.render("riddle/edit.ejs", { riddle: foundRiddle });
 });
-
 
 
 
