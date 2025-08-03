@@ -1,5 +1,6 @@
-<style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,00;0,700;1,400;1,700&display=swap');
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+</style>
 
 .syne-mono-regular {
   font-family: "Syne Mono", monospace;
@@ -10,7 +11,7 @@
 
 
 body {
-    font-family: 'syne-mono', monospace;
+    font-family: 'Syne Mono', monospace;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -24,11 +25,11 @@ body {
 
 
 #headingText {
-    font-size: 28px;
+    font-size: 34px;
     font-style: normal;
-    font-family: 'syne-mono', monospace;}
+    font-family: 'Syne Mono', monospace;}
 a:link {
-  color: white; 
+  color: rgb(255, 255, 255); 
 }
 
 a:visited {
