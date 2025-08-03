@@ -12,17 +12,18 @@
   <center>
     <%- include('../partials/_navbar.ejs') %>
       <h2>Riddles Index</h2>
-        <p> <div class="flex-container-riddle">
-      <ul>
-        <% riddles.forEach((riddle)=> { %>
-          <!-- <li> -->
+      <p>
+      <div class="flex-container-riddle">
+        <ul>
+          <% riddles.forEach((riddle)=> { %>
+
             Q: <%= riddle.riddle %>
-            <br><i>owned by <%= riddle.owner.username %>.
-                <a href="/riddles/<%= riddle._id %>">View</i></a>
-          <!-- </li> -->
-<br><Br>
-          <% }) %>
-      </ul>
+              <br><i>owned by <%= riddle.owner.username %>.
+                  <a href="/riddles/<%= riddle._id %>">View</i></a>
+
+              <br><Br>
+              <% }) %>
+        </ul>
   </center>
 </body>
 

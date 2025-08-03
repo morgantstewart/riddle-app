@@ -39,7 +39,7 @@ app.use(
   })
 );
 
-//
+
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -55,8 +55,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 
-
-//GET /
 app.get('/', async (req, res) => {
   res.render('index.ejs', {
     user: req.session.user,
@@ -64,8 +62,6 @@ app.get('/', async (req, res) => {
 });
 
 
-
-//GET / NEW
 app.get('/riddles/new', async (req, res) => {
   res.render('riddles/new.ejs', {
   });
@@ -88,15 +84,12 @@ app.get("/riddles/:riddleId", async (req, res) => {
 
 
 
-//NEW
-// POST /riddles
 app.post("/riddles", async (req, res) => {
   await Riddle.create(req.body);
   res.redirect("/riddles"); // redirect to index fruits
 });
 
 
-// put -- RIDDLES EDIT
 app.put("/riddles/edit", async (req, res) => {
   const foundRiddle = await Riddle.findById(req.params.riddleId);
   res.render("riddle/edit.ejs", { riddle: foundRiddle });
@@ -111,11 +104,6 @@ app.delete("/fruits/:fruitId", async (req, res) => {
 
 
 
-
-
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
-
-
-

@@ -1,22 +1,23 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Edit <%= riddle.name %></title>
-  </head>
-  <body>
-    <center>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Edit <%= riddle.name %>
+  </title>
+</head>
+
+<body>
+  <center>
     <br>
     <h1>Edit a Riddle</h1>
-<form action="/riddles/<%= riddle._id %>?_method=PUT" method="POST">
+    <form action="/riddles/<%= riddle._id %>?_method=PUT" method="POST">
 
       <label for="riddle">Riddle:</label>
       <textarea name="riddle" id="riddle" rows="7" cols="35"></textarea>
-     
+
       <br><br>
       <label for="answer">Answer:</label>
       <textarea name="answer" id="answer" rows="3" cols="35"></textarea>
@@ -26,6 +27,7 @@
 
 
 
-</center>
-  </body>
+  </center>
+</body>
+
 </html>
