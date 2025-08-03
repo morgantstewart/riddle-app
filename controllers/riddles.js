@@ -9,6 +9,7 @@ const User = require("../models/user.js")
 const Riddle = require("../models/riddle.js")
 
 
+
 //Router logic
 //create and read CRUD routes are completed.
 
@@ -64,6 +65,28 @@ router.post('/', async (req, res) => {
 //newest, create a POST route for /listings
 router.post('/:riddleId/', async (req, res) => {
   res.redirect('/riddles');
+});
+
+
+
+
+
+// controllers/listings.js
+
+router.delete('/:riddleId', async (req, res) => {
+  try {
+    const riddle = await Riddle.findById(req.params.listingId);
+    if (req.body.owner = req.session.user._id) {
+      // await riddle.deleteOne();
+      
+      res.redirect('/riddles');
+    } else {
+      res.send("You don't have permission to do that, sorry.");
+    }
+  } catch (error) {
+    console.error(error);
+    res.redirect('/');
+  }
 });
 
 
