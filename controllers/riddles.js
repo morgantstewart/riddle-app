@@ -73,11 +73,13 @@ router.post('/:riddleId/', async (req, res) => {
 
 // controllers/listings.js
 
+
+
 router.delete('/:riddleId', async (req, res) => {
   try {
     const riddle = await Riddle.findById(req.params.listingId);
     if (req.body.owner = req.session.user._id) {
-      // await riddle.deleteOne();
+      await riddle.deleteOne();
       res.redirect('/riddles');
     } else {
       res.send("You don't have permission to do that, sorry.");
@@ -90,7 +92,7 @@ router.delete('/:riddleId', async (req, res) => {
 
 
 
-// GET // EDIT
+// GET // EDIT Riddles
 
 router.get('/:riddleId/edit', async (req, res) => {
   try {
@@ -106,6 +108,28 @@ router.get('/:riddleId/edit', async (req, res) => {
     res.redirect('/');
   }
 });
+
+
+
+
+//PUT for EDIT RIDDLES
+
+router.put('/:riddleId', async (req, res) => {
+  try {
+    const currentRiddle = await Listing.findById(req.params.riddleId);
+    if (currentRiddle.owner.equals(req.session.user._id)) {
+      await currentRiddle.updateOne(req.body);
+      res.redirect('/riddles');
+    } else {
+      res.send("You don't have permission to do that.");
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
 
 
 

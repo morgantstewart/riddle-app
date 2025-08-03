@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riddles Index</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riddles Index</title>
 </head>
+
 <body>
-    <h2>Riddles Index</h2>
+  <center>
+    <%- include('../partials/_navbar.ejs') %>
+      <h2>Riddles Index</h2>
 
 
 
-    <ul>
-  <% riddles.forEach((riddle) => { %>
- <li>
-  Riddle: <%= riddle.riddle %> owned by <%= riddle.owner.username %>.
-  <a href="/riddles/<%= riddle._id %>">View more details.</a>
-</li>
+      <ul>
+        <% riddles.forEach((riddle)=> { %>
+          <li>
+            Riddle: <%= riddle.riddle %> owned by <%= riddle.owner.username %>.
+                <a href="/riddles/<%= riddle._id %>">View more details.</a>
+          </li>
 
-  <% }) %>
-</ul>
-
-
-
-<!-- views/listings/index.ejs -->
-
-
-
+          <% }) %>
+      </ul>
+  </center>
 </body>
+
 </html>
-
-
