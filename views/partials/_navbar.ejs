@@ -2,14 +2,14 @@
   <div class="flex-container-headerNav">
   <% if(user) { %> 
   <!-- <a href="/users/<#%= user._id %>/riddles">Your Riddles</a> -->
-    <a href="/">Home</a>
-  <a href="/riddles">Index</a>
-  <a href="/riddles/new">Add New Riddle</a>
-  <a href="/auth/sign-out">Sign Out</a> 
+   <small> <a href="/">Home</a>   ·   
+  <a href="/riddles">Index</a>   ·   
+  <a href="/riddles/new">Add New Riddle</a>   ·   
+  <a href="/auth/sign-out">Sign Out</a>
   <% } else { %>
-  <a href="/auth/sign-in">Sign In</a>
+  <a href="/auth/sign-in">Sign In</a>   ·   
   <a href="/auth/sign-up">Sign Up</a> 
   <% } %>
-  </div>
+  </div></small>
   </center>
 </nav>

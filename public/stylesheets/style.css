@@ -1,32 +1,16 @@
 <style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,00;0,700;1,400;1,700&display=swap');
 
-</style>.space-mono-regular {
-    font-family: "Space Mono", monospace;
-    font-weight: 200;
-    font-style: normal;
+
+.syne-mono-regular {
+  font-family: "Syne Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.space-mono-bold {
-    font-family: "Space Mono", monospace;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.space-mono-regular-italic {
-    font-family: "Space Mono", monospace;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.space-mono-bold-italic {
-    font-family: "Space Mono", monospace;
-    font-weight: 700;
-    font-style: italic;
-}
 
 
 body {
-    font-family: 'space-mono', monospace;
+    font-family: 'syne-mono', monospace;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -37,8 +21,12 @@ body {
 }
 
 
-/* style.css */
 
+
+#headingText {
+    font-size: 28px;
+    font-style: normal;
+    font-family: 'syne-mono', monospace;}
 a:link {
   color: white; 
 }
