@@ -1,6 +1,6 @@
-<style>
+/* <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
-</style>
+</style> */
 
 .syne-mono-regular {
   font-family: "Syne Mono", monospace;
@@ -18,7 +18,6 @@ body {
     width: 100vw;
     background-color: #000000;
     color: #ffffff;
-    link-color
 }
 
 
@@ -100,7 +99,6 @@ a:active {
     }
 
     .flex-container-headerNav {
-        background-color: ;
         padding: 20px;
         margin: 20px;
         flex-grow: 1;
