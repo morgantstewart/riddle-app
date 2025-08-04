@@ -18,8 +18,9 @@
           <% riddles.forEach((riddle)=> { %>
 
             Q: <%= riddle.riddle %>
-              <br><i>owned by <%= riddle.owner.username %>.
-                  <a href="/riddles/<%= riddle._id %>">View</i></a>
+              <br><i>
+                <span class="owned-by-text">owned by <%= riddle.owner.username %>.</span>
+                  <span class="view-text"><a href="/riddles/<%= riddle._id %>">View</i></a></span>
 
               <br><Br>
               <% }) %>
