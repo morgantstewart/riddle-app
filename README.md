@@ -8,7 +8,7 @@
 
 #### GitHub URL: https://github.com/morgantstewart/riddle-app/
 
-
+#### Project planning Trello Board: https://trello.com/b/v2iw8fzb
 
 ## Getting Started
 Sign up using the signup page to begin accessing the Riddle Me This index. 
