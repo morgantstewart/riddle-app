@@ -5,8 +5,8 @@
 
 <head>
   <style>
-@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
-</style>;
+    @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+  </style>;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
@@ -17,28 +17,36 @@
 </head>
 
 <body>
+  <center>
+    <h2>Details</h2>
+    <div class="flex-container-details">
+      <br><br><br>
 
-  <h2>Details</h2>
+      <p>Q: <%= riddle.riddle %>
+      </p>
+    </div>
 
-  <br>
-  <p>Q: <%= riddle.riddle %>
-  </p>
-  <p>A: <%= riddle.answer %>
-  </p>
+   
+    <div class="flex-container-details-edit">
 
-  <br><Br><br>
- <div class="flex-container-details">
-  <% if (owner._id.toString()===user._id.toString()) { %>
-    
-    <p>You own this!</p>
+      <p>A: <%= riddle.answer %>
+      </p><br>
+    </div><br><br> </div>
 
-    <a href="/riddles/<%= riddle._id %>/edit">Edit this riddle</a><br>
+    <% if (owner._id.toString()===user._id.toString()) { %>
 
-    <form action="/riddles/<%= riddle._id %>?_method=DELETE" method="POST">
-      <button type="submit">Delete this riddle</button>
-    </form>
-    <% } %>
-    
+
+
+      <p>You own this!</p>
+
+      <a href="/riddles/<%= riddle._id %>/edit">Edit this riddle</a><br><br>
+      <p>
+      <form action="/riddles/<%= riddle._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete this riddle</button>
+      </form>
+      </p>
+      <% } %>
+  </center>
 </body>
 
 </html>
