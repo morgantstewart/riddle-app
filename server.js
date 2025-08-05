@@ -21,7 +21,6 @@ const port = process.env.PORT ? process.env.PORT : '3000';
 
 
 
-//added as per middleware instructions on OpenHouse:
 const isSignedIn = require('./middleware/is-signed-in.js');
 const authController = require('./controllers/auth.js');
 const riddlesController = require('./controllers/riddles.js');
@@ -89,7 +88,7 @@ app.get("/riddles/:riddleId", async (req, res) => {
 
 app.post("/riddles", async (req, res) => {
   await Riddle.create(req.body);
-  res.redirect("/riddles"); // redirect to index fruits
+  res.redirect("/riddles"); 
 });
 
 
