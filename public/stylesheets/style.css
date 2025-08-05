@@ -1,6 +1,6 @@
-<style>
+/* <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
-</style>
+</style> */
 
 .syne-mono-regular {
   font-family: "Syne Mono", monospace;
@@ -18,14 +18,16 @@ body {
     width: 100vw;
     background-color: #000000;
     color: #ffffff;
-    link-color
+    font-size: clamp(1rem, 1vw + 0.5rem, 3rem);
+
 }
 
 
 
 
 #headingText {
-    font-size: 34px;
+  font-size: clamp(1rem, 2vw + 1rem, 3rem);
+    /* font-size: 34px; */
     font-style: normal;
     font-family: 'Syne Mono', monospace;}
 a:link {
@@ -100,7 +102,6 @@ a:active {
     }
 
     .flex-container-headerNav {
-        background-color: ;
         padding: 20px;
         margin: 20px;
         flex-grow: 1;
@@ -124,3 +125,14 @@ a:active {
     border: solid;
     background-color: rgb(0, 0, 0);
 }
+
+.owned-by-text {
+    background-color: #000000;
+    color: #bf7df9;
+    font-size: 16px;
+}
+
+.view-text {
+    background-color: #000000;
+    color: #be7df6;
+    font-size: 16px;
