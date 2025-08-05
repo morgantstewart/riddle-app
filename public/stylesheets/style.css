@@ -193,12 +193,13 @@ a:active {
 .flex-container-edit {
   color: #ffffff;
   display: flex;
+  width: 500px;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: px;
   border: solid;
-  background-color: rgb(86, 86, 86);
+  background-color: rgb(0, 0, 0);
 }
 
 .owned-by-text {
