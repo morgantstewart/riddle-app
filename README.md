@@ -11,12 +11,14 @@
 
 
 ## Getting Started
-Sign up using the signup page to begin accessing the Riddle Me This index. Once logged in, enter the Index by clicking on the "Enter Here" link or by using the above navigation bar. 
+Sign up using the signup page to begin accessing the Riddle Me This index. 
+Once logged in, enter the Index by clicking on the "Enter Here" link or by using the above navigation bar. 
 
 
 
 
-Browse all riddles on the Index page, clicking on 'View' to see the riddle answer. Once you've added your own riddle from the navigation menu above, you can edit the riddle or delete it from the Index. 
+Browse all riddles on the Index page, clicking on 'View' to see the riddle answer. 
+Once you've added your own riddle from the navigation menu above, you can edit the riddle or delete it from the Index. 
 
 
 <img width="679" height="575" alt="Index screenshot" src="https://github.com/user-attachments/assets/278b920f-4218-4c97-935d-bc287e3278e1" />
