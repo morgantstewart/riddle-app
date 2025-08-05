@@ -12,7 +12,8 @@
 #### Project planning: https://trello.com/b/v2iw8fzb
 
 ## Getting Started
-Sign up using the signup page to begin accessing the Riddle Me This index. Once logged in, enter the Index by clicking on the "Enter Here" link or by using the above navigation bar. 
+Sign up using the signup page to begin accessing the Riddle Me This index. 
+Once logged in, enter the Index by clicking on the "Enter Here" link or by using the above navigation bar. 
 
 
 <img width="679" height="575" alt="Add Riddle creenshot" src="https://github.com/user-attachments/assets/3ff807ee-bc96-42f3-8164-108ca755e5d5" />
