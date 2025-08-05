@@ -57,7 +57,7 @@ a:active {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 400px;
+  height: 600px;
   width: 500px;
   border: none;
   background-color: rgb(0, 0, 0);
@@ -77,7 +77,7 @@ a:active {
   justify-content: space-around;
   align-items: center;
   height: 600px;
-  width: 500px;
+  width: 600px;
   border: solid;
   background-color: rgb(0, 0, 0);
 }
