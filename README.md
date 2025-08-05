@@ -6,7 +6,7 @@
 
 #### App URL: https://riddle-app-51af01b3f74b.herokuapp.com/
 
-#### GitHub URL: https://github.com/morgantstewart/riddle-app.
+#### GitHub URL: https://github.com/morgantstewart/riddle-app/
 
 
 
