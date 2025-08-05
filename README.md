@@ -1,9 +1,9 @@
 # Riddle Me This...
 *A riddle index application created by Morgan Stewart.*
 
-![Game screenshot](https://www.mediafire.com/file/fkoy1bw4hza834t/Screenshot+2025-08-04+at+10.45.08 PM.png/file)
+![App login screenshot](https://www.mediafire.com/file/fkoy1bw4hza834t/Screenshot+2025-08-04+at+10.45.08 PM.png/file)
 
-#### Game URL: https://riddle-app-51af01b3f74b.herokuapp.com/
+#### App URL: https://riddle-app-51af01b3f74b.herokuapp.com/
 
 #### GitHub URL: https://github.com/morgantstewart/riddle-app.
 
@@ -13,14 +13,15 @@
 Sign up using the signup page to begin accessing the Riddle Me This index. Once logged in, enter the Index by clicking on the "Enter Here" link or by using the above navigation bar. 
 
 
-![Game screenshot](https://www.mediafire.com/file/wnv0m7rs2f99fz0/Screenshot+2025-08-05+at+1.20.22 AM.png/file)
 
 
 Browse all riddles on the Index page, clicking on 'View' to see the riddle answer. Once you've added your own riddle from the navigation menu above, you can edit the riddle or delete it from the Index. 
 
+![Index screenshot](https://www.mediafire.com/file/wnv0m7rs2f99fz0/Screenshot+2025-08-05+at+1.20.22 AM.png/file)
 
 
-![Game screenshot](https://www.mediafire.com/file/8uppoga8c0fphua/Screenshot+2025-08-05+at+1.21.35 AM.png/file)
+
+![Add Riddle creenshot](https://www.mediafire.com/file/8uppoga8c0fphua/Screenshot+2025-08-05+at+1.21.35 AM.png/file)
 
 Enjoy!
 
