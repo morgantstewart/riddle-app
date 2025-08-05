@@ -2,9 +2,14 @@
 <html lang="en">
 
 <head>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+</style>;
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  
   <title>Edit Riddle</title>
 </head>
 
@@ -12,6 +17,7 @@
   <center>
     <br>
     <h1>Edit a Riddle</h1>
+      <div class="flex-container-edit"></div>
     <form action="/riddles/<%= riddle._id %>?_method=PUT" method="POST">
 
       <label for="riddle">Riddle:</label>
@@ -22,7 +28,7 @@
       <textarea name="answer" id="answer" rows="3" cols="35"></textarea>
       <br><br>
       <button type="submit">Edit Riddle</button>
-    </form>
+    </form></div>
 
   </center>
 </body>
