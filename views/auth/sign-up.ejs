@@ -10,20 +10,24 @@
   <title>Sign Up</title>
 </head>
 <body>
+  <center>
   <h1>Create a new account!</h1>
+  <br>
   <form action="/auth/sign-up" method="POST">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required />
+    <br><br>
     <label for="password">Password:</label>
     <input type="password" name="password" id="password" required />
-    <label for="confirmPassword">Confirm Password:</label>
+    <br><br><label for="confirmPassword">Confirm Password:</label>
     <input 
       type="password"
       name="confirmPassword"
       id="confirmPassword"
       required 
-    />
+    /><br><br><br>
     <button type="submit">Sign up</button>
   </form>
+  </center>
 </body>
 </html>

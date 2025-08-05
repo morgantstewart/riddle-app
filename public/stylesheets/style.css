@@ -16,6 +16,7 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+    background-image: url('https://www.mediafire.com/file/v6vh5yegcay9r5i/mazewallpaper.png/file');
     background-color: #000000;
     color: #ffffff;
     font-size: clamp(1rem, 1vw + 0.5rem, 3rem);
@@ -50,7 +51,8 @@ a:active {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 600px;
+    height: 400px;
+    width: 500px;
     border: none;
     background-color: rgb(0, 0, 0);
 }
@@ -80,7 +82,8 @@ a:active {
     align-items: center;
     height: 60px;
     border: none;
-    background-color: rgb(0, 0, 0);
+    width: 300px;
+   opacity: 0.5
 }
 
 .flex-container-intro2 {
