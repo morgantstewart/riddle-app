@@ -1,27 +1,34 @@
 # Riddle Me This...
 *A riddle index application created by Morgan Stewart.*
 
-![App login screenshot](https://www.mediafire.com/file/fkoy1bw4hza834t/Screenshot+2025-08-04+at+10.45.08 PM.png/file)
+<img width="679" height="492" alt="App login screenshot" src="https://github.com/user-attachments/assets/8de0186b-2749-406b-a5fb-b81ea5e88707" />
+
 
 #### App URL: https://riddle-app-51af01b3f74b.herokuapp.com/
 
-#### GitHub URL: https://github.com/morgantstewart/riddle-app.
+#### GitHub URL: https://github.com/morgantstewart/riddle-app/
 
-
+#### Project planning Trello Board: https://trello.com/b/v2iw8fzb
 
 ## Getting Started
-Sign up using the signup page to begin accessing the Riddle Me This index. Once logged in, enter the Index by clicking on the "Enter Here" link or by using the above navigation bar. 
+Sign up using the signup page to begin accessing the Riddle Me This index. 
+Once logged in, enter the Index by clicking on the "Enter Here" link or by using the above navigation bar. 
 
 
 
 
-Browse all riddles on the Index page, clicking on 'View' to see the riddle answer. Once you've added your own riddle from the navigation menu above, you can edit the riddle or delete it from the Index. 
-
-![Index screenshot](https://www.mediafire.com/file/wnv0m7rs2f99fz0/Screenshot+2025-08-05+at+1.20.22 AM.png/file)
-
+Browse all riddles on the Index page, clicking on 'View' to see the riddle answer. 
+Once you've added your own riddle from the navigation menu above, you can edit the riddle or delete it from the Index. 
 
 
-![Add Riddle creenshot](https://www.mediafire.com/file/8uppoga8c0fphua/Screenshot+2025-08-05+at+1.21.35 AM.png/file)
+<img width="679" height="575" alt="Index screenshot" src="https://github.com/user-attachments/assets/278b920f-4218-4c97-935d-bc287e3278e1" />
+
+
+
+
+<img width="679" height="519" alt="Add Riddle creenshot" src="https://github.com/user-attachments/assets/0f6774fb-812f-4fcf-abe5-94f68ff847ce" />
+
+
 
 Enjoy!
 
@@ -40,6 +47,7 @@ https://www.w3schools.com/html/html_images.asp
 https://www.geeksforgeeks.org/node-js/how-to-create-a-pre-filled-forms-in-node-js/
 
 https://www.w3schools.com/howto/howto_js_autocomplete.asp
+
 
 ## Technologies Used
 * Javascript
